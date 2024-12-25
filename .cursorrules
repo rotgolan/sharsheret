@@ -1,0 +1,7 @@
+# Package Manager Configuration
+package_manager: yarn
+
+# Build Commands
+build_command: yarn build
+install_command: yarn install
+dev_command: yarn dev 
