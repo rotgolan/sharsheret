@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { createSupabaseClient } from '@/lib/supabase/client'
+import { createClient } from '@/utils/supabase/client'
 
 export function UserList() {
   const [users, setUsers] = useState<any[]>([])
@@ -11,7 +11,7 @@ export function UserList() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const supabase = createSupabaseClient()
+        const supabase = createClient()
         const { data, error } = await supabase.from('Users').select('*')
         
         if (error) throw error
